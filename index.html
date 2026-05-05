@@ -1,40 +1,135 @@
 <!DOCTYPE html>
-<html lang ="ru">
-    <head>
-        <meta charset="UTF-8"
-        <meta name="viewport" content="width=device=width, initial-scale=1.0">
-        <title> Эдгар - создание сайтов</title>
-        <style>
-            body
-                {
-                    font-family: Arial, sans-serif;
-                    max-width: 800px;
-                    margin: 0 auto;
-                    padding: 20px;
-                    background-color: aliceblue;
-                }
-                h1 {
-                    color: #2c3e50;
-                }
-                .contact {
-                    background: white;
-                    padding: 15px;
-                    border-radius: 8px;
-                    margin-top: 20px;
-                }
-        </style>
-    </head>
-    <body>
-<h1>Привет! Я Эдгар</h1>
-<p>Я создаю современные и быстрые сайты для малого бизнеса:</p>
-<ul>
-    <li>Сайты-визитки</li>
-    <li>Лендинги для услуг</li>
-    <li>Адаптивные под мобильные устройства</li>
-</ul>
-<div class="contact">
-    <p>📩 Готов взять ваш заказ!</p>
-    <p>Напишите мне: <strong>ed_bagramyan@mail.ru</strong></p>
-</div>
-    </body>
-</html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эдгар — Создание сайтов под ключ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        header {
+            background: #2563eb;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .content {
+            padding: 40px;
+        }
+        .services {
+            margin: 30px 0;
+        }
+        .services h2 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .service-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-left: 4px solid #3b82f6;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .contact {
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .contact h2 {
+            color: #0c4a6e;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Эдгар</h1>
+            <p class="subtitle">Создаю сайты для малого бизнеса</p>
+        </header>
+        
+        <div class="content">
+            <p>Привет! Я начинающий веб-разработчик, но уже создаю качественные и современные сайты «под ключ».</p>
+            
+            <div class="services">
+                <h2>Что я предлагаю:</h2>
+                <div class="service-item">✅ Сайт-визитка (1 страница) — от 1000 ₽</div>
+                <div class="service-item">✅ Лендинг с формой заявки — от 1500 ₽</div>
+                <div class="service-item">✅ Адаптивный дизайн (работает на телефоне и компьютере)</div>
+                <div class="service-item">✅ Быстрые сроки — от 1 дня</div>
+                <div class="service-item">✅ Бесплатная правка после сдачи</div>
+            </div>
+            
+            <div class="contact">
+                <h2>Готов взять ваш заказ!</h2>
+                <p>Напишите мне прямо сейчас:</p>
+                <a href="https://t.me/bagra_man" class="btn" target="_blank">💬 Telegram</a>
+                <a href="mailto:bagraman.stream@gmail.com" class="btn">📧 Email</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Эдгар | Сайт создан с ❤️ для вашего бизнеса</p>
+        </footer>
+    </div>
+</body>
+</html>  
+    
+    
