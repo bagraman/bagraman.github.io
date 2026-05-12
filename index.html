@@ -157,13 +157,25 @@ section { padding: var(--spacing-section) 0; }
 /* 🔹 АДАПТИВ (базовый) */
 @media (max-width: 768px) {
   :root { --spacing-section: 60px; }
-  .nav-links { display: none; } /* Позже подключим JS для бургера */
+  .nav-links { display: none;
+    position: absolute;
+    top: 60px; left: 0; right: 0;
+    flex-direction: column;
+    background: var(--bg-card);
+    padding: 20px;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft); } 
+    .nav-links.active {
+    display: flex; }
+  .nav-links li { margin: 12px 0; }
   .burger { display: block; }
+  /* остальные твои медиа-запросы остаются ниже */
   .hero h1 { font-size: 2rem; }
   .about-wrapper { flex-direction: column; text-align: center; }
   .skills { justify-content: center; }
   .grid { grid-template-columns: 1fr; }
   .messengers { flex-direction: column; }
+  
 }
 </style>
 </head>
@@ -172,7 +184,7 @@ section { padding: var(--spacing-section) 0; }
     <!-- 🧭 НАВИГАЦИЯ -->
     <nav class="navbar" id="navbar">
         <div class="container nav-wrapper">
-            <a href="#" class="logo">Эдгар</a>
+            <a href="#" class="logo">Эдгар Баграмян</a>
             <ul class="nav-links">
                 <li><a href="#hero">Главная</a></li>
                 <li><a href="#services">Услуги</a></li>
@@ -311,7 +323,32 @@ section { padding: var(--spacing-section) 0; }
 
     <!-- 🔹 Твой скрипт отправки в Telegram (вставь его сюда, когда будешь готов) -->
     <script>
-        // Сюда позже вставим код формы
+     document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    // Открыть/закрыть меню
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      burger.textContent = nav.classList.contains('active') ? '✕' : '☰';
+    });
+
+    // Закрыть меню при клике на любую ссылку
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+        burger.textContent = '☰';
+      });
+    });
+
+    // Закрыть меню при клике вне его
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && e.target !== burger) {
+        nav.classList.remove('active');
+        burger.textContent = '☰';
+      }
+    });
+  });   // Сюда позже вставим код формы
     </script>
 </body>
 </html>
