@@ -1,188 +1,163 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эдгар — Создание сайтов под ключ</title>
+    <meta name="description" content="Эдгар — создание быстрых и адаптивных сайтов для малого бизнеса. Минимализм, чистый код, форма заявки в Telegram.">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Эдгар — Веб-разработчик</title>
+    <!-- Стили пока пустые, подключим на следующем шаге -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf9 100%);
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        header {
-            background: #2563eb;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        .content {
-            padding: 40px;
-        }
-        .services {
-            margin: 30px 0;
-        }
-        .services h2 {
-            color: #1e40af;
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-        }
-        .service-item {
-            background: #f8fafc;
-            padding: 15px;
-            border-left: 4px solid #3b82f6;
-            margin: 12px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .contact {
-            background: #f0f9ff;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .contact h2 {
-            color: #0c4a6e;
-            margin-bottom: 15px;
-        }
-        .btn {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            margin: 10px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background: #1d4ed8;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        @media (max-width: 600px) {
-            .content {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
+        /* Временный сброс, чтобы видеть структуру */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: system-ui, sans-serif; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Эдгар</h1>
-            <p class="subtitle">Создаю сайты для малого бизнеса</p>
-        </header>
-        
-        <div class="content">
-            <p>Привет! Я начинающий веб-разработчик, но уже создаю качественные и современные сайты «под ключ».</p>
-            
-            <div class="services">
-                <h2>Что я предлагаю:</h2>
-                <div class="service-item">✅ Сайт-визитка (1 страница) — от 1000 ₽</div>
-                <div class="service-item">✅ Лендинг с формой заявки — от 1500 ₽</div>
-                <div class="service-item">✅ Адаптивный дизайн (работает на любом девайсе)</div>
-                <div class="service-item">✅ Быстрые сроки — от 1 дня</div>
-                <div class="service-item">✅ Бесплатная правка после сдачи</div>
-            </div>
-            
-            <div class="contact">
-    <h2>Готов взять ваш заказ!</h2>
-    <p>Напишите мне любым удобным способом:</p>
-    
-    <a href="https://t.me/ed_bagra" class="btn" target="_blank">💬 Telegram</a>
-    <a href="https://vk.com/bagra_man" class="btn" target="_blank">📘 ВКонтакте</a>
-    
-    <p style="margin-top: 20px; font-size: 1.1em;">
-        📧 Email: <strong>bagramyan.edgar00@mail.ru</strong>
-    </p>
-    <p style="font-size: 1.1em; color: #475569;">
-        Также доступен в мессенджере <strong>MAX</strong> (По номеру 79956188012)
-    </p>
-</div>
+
+    <!-- 🧭 НАВИГАЦИЯ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">Эдгар</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+            <button class="burger" aria-label="Меню">☰</button>
         </div>
-        
-        <footer>
-            <p>© 2026 Эдгар | Сайт создан с ❤️ для вашего бизнеса</p>
-        </footer>
+    </nav>
+
+    <main>
+        <!-- 🎬 HERO (Главный экран) -->
+        <section id="hero" class="hero">
+            <video autoplay muted loop playsinline poster="poster.jpg">
+                <source src="video.webm" type="video/webm">
+                <source src="video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Создаю сайты, которые работают</h1>
+                <p>Адаптивные, быстрые и удобные решения для малого бизнеса</p>
+                <div class="hero-buttons">
+                    <a href="#contacts" class="btn btn-primary">Обсудить проект</a>
+                    <a href="#portfolio" class="btn btn-secondary">Посмотреть работы</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🛠️ УСЛУГИ -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Услуги и цены</h2>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Сайт-визитка</h3>
+                        <p>Одностраничный сайт с информацией, контактами и формой заявки.</p>
+                        <div class="meta">
+                            <span class="price">от 1 000 ₽</span>
+                            <span class="time">1–2 дня</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Лендинг</h3>
+                        <p>Продающая страница с галереей, тарифами и интеграцией мессенджеров.</p>
+                        <div class="meta">
+                            <span class="price">от 1 500 ₽</span>
+                            <span class="time">2–3 дня</span>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <h3>Адаптивная верстка</h3>
+                        <p>Верстка готового макета из Figma под все устройства.</p>
+                        <div class="meta">
+                            <span class="price">по договоренности</span>
+                            <span class="time">от 1 дня</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 👤 ОБО МНЕ -->
+        <section id="about" class="section">
+            <div class="container about-wrapper">
+                <div class="about-image">
+                    <img src="photo.jpg" alt="Эдгар — веб-разработчик" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title">Обо мне</h2>
+                    <p>Привет! Я Эдгар. Делаю сайты без лишнего шума, но с вниманием к деталям. Ценю минимализм, скорость загрузки и удобство для пользователя.</p>
+                    <p>Использую чистый HTML, CSS и базовый JS. Каждый проект — это прозрачный процесс, фиксированные сроки и бесплатная правка после сдачи.</p>
+                    <div class="skills">
+                        <span>HTML5</span><span>CSS3</span><span>JS</span><span>Git</span><span>Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🖼️ ПОРТФОЛИО -->
+        <section id="portfolio" class="section">
+            <div class="container">
+                <h2 class="section-title">Примеры работ</h2>
+                <div class="grid">
+                    <article class="card project-card">
+                        <img src="project1.jpg" alt="Сайт для кофейни" loading="lazy">
+                        <h3>Сайт для кофейни</h3>
+                        <p>Адаптивный лендинг с меню, галереей и формой бронирования.</p>
+                    </article>
+                    <article class="card project-card">
+                        <img src="project2.jpg" alt="Визитка визажиста" loading="lazy">
+                        <h3>Визитка визажиста</h3>
+                        <p>Минималистичный сайт с портфолио, прайсом и кнопкой записи.</p>
+                    </article>
+                    <article class="card project-card">
+                        <img src="project3.jpg" alt="Сайт юриста" loading="lazy">
+                        <h3>Сайт для юриста</h3>
+                        <p>Строгий дизайн, раздел услуг, форма консультации и Telegram-интеграция.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+       <!-- 📞 КОНТАКТЫ -->
+<section id="contacts" class="section">
+    <div class="container contacts-wrapper">
+        <h2 class="section-title">Связаться со мной</h2>
+        <p class="subtitle">Обычно отвечаю в течение 2 часов</p>
+
+        <form id="tgForm" class="contact-form">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="contact" placeholder="Телефон или Email" required>
+            <textarea name="message" placeholder="Кратко опишите задачу" required></textarea>
+            <button type="submit" class="btn btn-primary">Отправить заявку</button>
+            <p id="formStatus" class="form-status"></p>
+        </form>
+
+        <div class="contact-alt">
+            <p>Или напишите напрямую:</p>
+            <div class="messengers">
+                <a href="https://t.me/Ed_Bagra" class="btn btn-outline" target="_blank">Telegram</a>
+                <a href="https://vk.com/bagra_man" class="btn btn-outline" target="_blank">ВКонтакте</a>
+            </div>
+            <p class="email-note">📧 Email: <a href="mailto:ed_bagramyan@mail.ru">ed_bagramyan@mail.ru</a></p>
+        </div>
     </div>
-<!-- Форма заявки-->
- <div class="contact-form">
-  <h3>Оставить заявку</h3>
-  <form id="tgForm">
-    <input type="text" name="name" placeholder="Ваше имя" required>
-    <input type="tel" name="contact" placeholder="Телефон или Email" required>
-    <textarea name="message" placeholder="Кратко опишите задачу" required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
-  <p id="formStatus" style="margin-top: 10px; font-size: 0.9em;"></p>
-</div>
+</section>
+    </main>
 
-<!-- 🔹 СКРИПТ ОТПРАВКИ В TELEGRAM -->
-<script>
-  document.getElementById('tgForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // 🔸 Останавливаем перезагрузку страницы
+    <!-- 🦶 FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Эдгар. Сайт создан с вниманием к деталям.</p>
+        </div>
+    </footer>
 
-    // 🔸 Вставь сюда свои данные (без кавычек вокруг chat_id, если это число)
-        const TG_USERNAME = 'Ed_Bagra'; // твой юзернейм в Telegram (без @)
-
-        // 🔸 Собираем данные из формы
-    const name    = this.name.value.trim();
-    const contact = this.contact.value.trim();
-    const message = this.message.value.trim();
-
-    // 🔸 Формируем текст сообщения
-    const text = `📩 Новая заявка с сайта
-👤 Имя: ${name}
-📞 Контакт: ${contact}
-💬 Задача: ${message}`;
-
-    const encodedText = encodeURIComponent(text);
-
-    // 🔸 Открываем Telegram с предзаполненным сообщением
-    const tgLink = `https://t.me/${TG_USERNAME}?text=${encodedText}`;
-    window.open(tgLink, '_blank');
-
-    // 🔸 Показываем пользователю подсказку
-    document.getElementById('formStatus').innerHTML = 
-      '✅ Переход в Telegram... <br><small>Если не открылось — напиши мне вручную: <a href="https://t.me/Ed_Bagra" target="_blank">@Ed_Bagra</a></small>';
-    
-    // 🔸 Очищаем форму
-    this.reset();
-  });
-</script>
-</script>
+    <!-- 🔹 Твой скрипт отправки в Telegram (вставь его сюда, когда будешь готов) -->
+    <script>
+        // Сюда позже вставим код формы
+    </script>
 </body>
-</html>  
+</html>
