@@ -112,7 +112,7 @@
                 <h2>Что я предлагаю:</h2>
                 <div class="service-item">✅ Сайт-визитка (1 страница) — от 1000 ₽</div>
                 <div class="service-item">✅ Лендинг с формой заявки — от 1500 ₽</div>
-                <div class="service-item">✅ Адаптивный дизайн (работает на телефоне и компьютере)</div>
+                <div class="service-item">✅ Адаптивный дизайн (работает на любом девайсе)</div>
                 <div class="service-item">✅ Быстрые сроки — от 1 дня</div>
                 <div class="service-item">✅ Бесплатная правка после сдачи</div>
             </div>
@@ -137,7 +137,51 @@
             <p>© 2026 Эдгар | Сайт создан с ❤️ для вашего бизнеса</p>
         </footer>
     </div>
+<!-- Форма заявки-->
+ <div class="contact-form">
+  <h3>Оставить заявку</h3>
+  <form id="tgForm">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="tel" name="contact" placeholder="Телефон или Email" required>
+    <textarea name="message" placeholder="Кратко опишите задачу" required></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+  <p id="formStatus" style="margin-top: 10px; font-size: 0.9em;"></p>
+</div>
+
+<!-- 🔹 СКРИПТ ОТПРАВКИ В TELEGRAM -->
+<script>
+  document.getElementById('tgForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // 🔸 Останавливаем перезагрузку страницы
+
+    // 🔸 Вставь сюда свои данные (без кавычек вокруг chat_id, если это число)
+        const TG_USERNAME = 'Ed_Bagra'; // твой юзернейм в Telegram (без @)
+
+        // 🔸 Собираем данные из формы
+    const name    = this.name.value.trim();
+    const contact = this.contact.value.trim();
+    const message = this.message.value.trim();
+
+    // 🔸 Формируем текст сообщения
+    const text = `📩 Новая заявка с сайта
+👤 Имя: ${name}
+📞 Контакт: ${contact}
+💬 Задача: ${message}`;
+
+    const encodedText = encodeURIComponent(text);
+
+    // 🔸 Открываем Telegram с предзаполненным сообщением
+    const tgLink = `https://t.me/${TG_USERNAME}?text=${encodedText}`;
+    window.open(tgLink, '_blank');
+
+    // 🔸 Показываем пользователю подсказку
+    document.getElementById('formStatus').innerHTML = 
+      '✅ Переход в Telegram... <br><small>Если не открылось — напиши мне вручную: <a href="https://t.me/Ed_Bagra" target="_blank">@Ed_Bagra</a></small>';
+    
+    // 🔸 Очищаем форму
+    this.reset();
+  });
+</script>
+</script>
 </body>
 </html>  
-    
-    
