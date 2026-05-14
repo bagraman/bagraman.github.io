@@ -145,8 +145,14 @@ section { padding: var(--spacing-section) 0; }
 /* 🔹 ОБО МНЕ */
 .about-wrapper { display: flex; align-items: center; gap: 50px; }
 .about-image img {
-  width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
-  border: 4px solid var(--bg-card); box-shadow: var(--shadow-soft);
+  width: 180px; 
+  height: 180px; 
+  border-radius: 50%; 
+  object-fit: cover; /* Было: cover → Стало: contain */
+  object-position: left; /* Показывает верхнюю часть (где лицо) */
+  border: 4px solid var(--bg-card); 
+  box-shadow: var(--shadow-soft);
+  background: var(--bg-page); /* Фон, если фото не квадратное */
 }
 .about-text { flex: 1; }
 .skills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
